@@ -1,12 +1,11 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import { Poppins } from "next/font/google"; // ✅ Add Poppins import
+// app/layout.tsx (or layout.jsx)
+import { Nunito } from "next/font/google";
 import "./globals.css";
 
-
-const poppins = Poppins({
-  variable: "--font-poppins",
+const nunito = Nunito({
+  variable: "--font-nunito", // rename to match actual font
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], // adjust as needed
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900", "1000"],
 });
 
 export const metadata = {
@@ -17,11 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={` ${poppins.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${nunito.variable} antialiased`}>{children}</body>
     </html>
   );
 }
